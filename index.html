@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hatem BaniYaseen | Portfolio</title>
 
-  <!-- Font Awesome Icons -->
+  <!-- Icons -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         referrerpolicy="no-referrer" />
@@ -14,22 +14,38 @@
 </head>
 
 <body>
+  <!-- Animated background (subtle) -->
+  <div class="bg" aria-hidden="true">
+    <span class="glow g1"></span>
+    <span class="glow g2"></span>
+    <span class="glow g3"></span>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="#top">
+      <a class="brand" href="#top" aria-label="Go to top">
         <span class="logo">HB</span>
         <span class="brand-text">Hatem BaniYaseen</span>
       </a>
 
       <div class="nav-right">
-        <!-- Theme Toggle -->
+        <!-- Theme toggle -->
         <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">
           <i class="fa-solid fa-moon icon"></i>
           <span class="icon-text">Night</span>
         </button>
 
-       
+        <!-- Mobile nav toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-btn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </label>
 
         <nav class="nav-links">
           <a href="#about"><i class="fa-regular fa-user"></i> About</a>
@@ -37,14 +53,14 @@
           <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
           <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
           <a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
-          <a class="btn small" href="#contact"><i class="fa-regular fa-paper-plane"></i> Contact</a>
-        </nav>
 
-         <!-- Mobile Toggle -->
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-btn" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </label>
+          <!-- Download CV -->
+          <a class="btn small"
+             href="Hatem%20CV%202025.pdf"
+             download="Hatem_BaniYaseen_CV_2025.pdf">
+            <i class="fa-solid fa-download"></i> CV
+          </a>
+        </nav>
       </div>
     </div>
   </header>
@@ -53,53 +69,60 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <p class="kicker"><i class="fa-solid fa-code"></i> Senior Software Developer</p>
+        <div class="reveal">
+          <p class="kicker">
+            <i class="fa-solid fa-code"></i>
+            Senior Software Developer
+          </p>
 
           <h1 class="title">
-            Building scalable enterprise systems <span class="accent">with clean architecture</span>.
+            Black & Gold <span class="accent">enterprise systems</span> — clean, fast, scalable.
           </h1>
 
           <p class="subtitle">
             I'm <strong>Hatem BaniYaseen</strong>, a Senior Software Developer with 5+ years of experience
-            as architect, developer, and analyst. I specialize in system integration, API development,
-            and performance optimization for business applications.
+            building enterprise apps, integrating APIs, and optimizing performance for business workflows.
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#projects"><i class="fa-solid fa-eye"></i> View Projects</a>
-            <a class="btn ghost" href="#contact"><i class="fa-solid fa-message"></i> Contact Me</a>
-
-            <!-- ✅ Download CV -->
-            <!-- Put the PDF in same folder as index.html, keep the same name, and it will download -->
+            <a class="btn" href="#projects"><i class="fa-solid fa-wand-magic-sparkles"></i> Explore Projects</a>
+            <a class="btn ghost" href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
             <a class="btn ghost"
                href="Hatem%20CV%202025.pdf"
                download="Hatem_BaniYaseen_CV_2025.pdf">
-              <i class="fa-solid fa-download"></i> Download CV
+              <i class="fa-solid fa-file-arrow-down"></i> Download CV
             </a>
           </div>
 
           <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-num"><i class="fa-solid fa-calendar-check"></i> 5+ Years</div>
-              <div class="stat-label">Experience</div>
+            <div class="stat" data-counter>
+              <div class="stat-num">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span class="count" data-to="5" data-suffix="+">0</span>
+              </div>
+              <div class="stat-label">Years Experience</div>
             </div>
-            <div class="stat">
-              <div class="stat-num"><i class="fa-solid fa-building"></i> ERP</div>
-              <div class="stat-label">Infor M3 Integration</div>
+            <div class="stat" data-counter>
+              <div class="stat-num">
+                <i class="fa-solid fa-plug"></i>
+                <span class="count" data-to="30" data-suffix="+">0</span>
+              </div>
+              <div class="stat-label">Integrations / APIs</div>
             </div>
-            <div class="stat">
-              <div class="stat-num"><i class="fa-solid fa-plug"></i> APIs</div>
-              <div class="stat-label">System Integration</div>
+            <div class="stat" data-counter>
+              <div class="stat-num">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span class="count" data-to="10" data-suffix="+">0</span>
+              </div>
+              <div class="stat-label">Projects & Systems</div>
             </div>
           </div>
         </div>
 
-        <aside class="card profile-card">
-          <!-- ✅ Your photo -->
-          <!-- Put IMG_7651.jpeg in same folder as index.html -->
+        <aside class="card profile-card reveal tilt">
           <div class="avatar-wrap">
             <img class="avatar-img" src="hatem.jpeg" alt="Hatem BaniYaseen" />
+            <div class="avatar-ring" aria-hidden="true"></div>
           </div>
 
           <h3 class="card-title">Hatem BaniYaseen</h3>
@@ -108,7 +131,7 @@
           <div class="chip-row">
             <span class="chip"><i class="fa-brands fa-microsoft"></i> ASP.NET Core</span>
             <span class="chip"><i class="fa-brands fa-java"></i> Java / Spring</span>
-            <span class="chip"><i class="fa-solid fa-database"></i> SQL Server</span>
+            <span class="chip"><i class="fa-solid fa-database"></i> SQL</span>
             <span class="chip"><i class="fa-solid fa-arrows-rotate"></i> Infor M3</span>
           </div>
 
@@ -119,17 +142,12 @@
             <a href="mailto:hatemKhaled1997@icloud.com">
               <i class="fa-regular fa-envelope"></i> Email
             </a>
-            <a href="#" title="Add your GitHub link">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
           </div>
 
-          <div class="contact-mini">
+          <div class="mini">
             <div class="mini-row">
               <span class="mini-label">Email</span>
-              <span class="mini-val">
-                <a href="mailto:hatemKhaled1997@icloud.com">hatemKhaled1997@icloud.com</a>
-              </span>
+              <span class="mini-val">hatemKhaled1997@icloud.com</span>
             </div>
             <div class="mini-row">
               <span class="mini-label">Phone</span>
@@ -143,33 +161,31 @@
     <!-- About -->
     <section id="about" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <h2><i class="fa-regular fa-user"></i> About</h2>
-          <p class="muted">Professional summary and what I deliver.</p>
+          <p class="muted">What I build and how I work.</p>
         </div>
 
         <div class="grid-2">
-          <div class="card">
+          <div class="card reveal tilt">
             <h3 class="card-title">Professional Summary</h3>
             <p>
               Senior Software Developer with 5+ years of experience as architect, developer, and analyst.
-              Skilled in project delivery, release management, and leading support teams. Detail-oriented,
-              organized, thrives under tight deadlines, and contributes effectively to team success.
+              Skilled in delivery, release management, system integration, and leading support teams.
             </p>
             <p class="muted">
-              Strong background in enterprise integrations including Infor M3, REST APIs, workflow-based systems,
-              fleet tracking solutions, and business automation platforms.
+              Focus areas: inventory, approvals, tracking, reporting, and integrations (Infor M3 + APIs).
             </p>
           </div>
 
-          <div class="card">
-            <h3 class="card-title">What I deliver</h3>
+          <div class="card reveal tilt">
+            <h3 class="card-title">Highlights</h3>
             <ul class="list">
-              <li>Enterprise web applications and internal platforms</li>
-              <li>API integrations between multiple systems (.NET / PHP / Java)</li>
-              <li>SQL performance optimization and reporting improvements</li>
-              <li>Workflow automation, approvals, and operational visibility</li>
-              <li>Team support, code reviews, and best practices</li>
+              <li>Enterprise web apps and internal portals</li>
+              <li>Secure REST APIs (.NET / PHP / Java)</li>
+              <li>SQL optimization and reporting performance</li>
+              <li>Workflow systems: approvals, operations, tracking</li>
+              <li>Mentoring, reviews, best practices</li>
             </ul>
           </div>
         </div>
@@ -179,24 +195,22 @@
     <!-- Skills -->
     <section id="skills" class="section alt">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <h2><i class="fa-solid fa-screwdriver-wrench"></i> Skills</h2>
           <p class="muted">Core technologies and strengths.</p>
         </div>
 
-        <div class="skills">
-          <div class="pill"><i class="fa-brands fa-microsoft"></i> C# / ASP.NET / ASP.NET Core</div>
-          <div class="pill"><i class="fa-brands fa-java"></i> Java / Spring</div>
-          <div class="pill"><i class="fa-brands fa-php"></i> PHP APIs (PDO)</div>
-          <div class="pill"><i class="fa-solid fa-database"></i> SQL Server</div>
-          <div class="pill"><i class="fa-solid fa-database"></i> Oracle Database</div>
-          <div class="pill"><i class="fa-solid fa-arrows-rotate"></i> Infor M3 Integration</div>
-          <div class="pill"><i class="fa-solid fa-plug"></i> REST APIs</div>
-          <div class="pill"><i class="fa-solid fa-people-group"></i> Agile / Scrum</div>
-          <div class="pill"><i class="fa-solid fa-sitemap"></i> System Architecture</div>
-          <div class="pill"><i class="fa-solid fa-chart-column"></i> Power BI</div>
-          <div class="pill"><i class="fa-solid fa-layer-group"></i> Full-Stack Development</div>
-          <div class="pill"><i class="fa-regular fa-file-lines"></i> Documentation & Release Support</div>
+        <div class="skills reveal">
+          <div class="pill tilt"><i class="fa-brands fa-microsoft"></i> C# / ASP.NET Core</div>
+          <div class="pill tilt"><i class="fa-brands fa-java"></i> Java / Spring</div>
+          <div class="pill tilt"><i class="fa-brands fa-php"></i> PHP APIs (PDO)</div>
+          <div class="pill tilt"><i class="fa-solid fa-database"></i> SQL Server</div>
+          <div class="pill tilt"><i class="fa-solid fa-database"></i> Oracle</div>
+          <div class="pill tilt"><i class="fa-solid fa-arrows-rotate"></i> Infor M3 Integration</div>
+          <div class="pill tilt"><i class="fa-solid fa-plug"></i> REST APIs</div>
+          <div class="pill tilt"><i class="fa-solid fa-people-group"></i> Agile / Scrum</div>
+          <div class="pill tilt"><i class="fa-solid fa-chart-column"></i> Power BI</div>
+          <div class="pill tilt"><i class="fa-solid fa-layer-group"></i> Full-stack</div>
         </div>
       </div>
     </section>
@@ -204,90 +218,136 @@
     <!-- Projects -->
     <section id="projects" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
-          <p class="muted">Applications I worked on (selected).</p>
+          <p class="muted">Filter + click any card to open details.</p>
         </div>
 
-        <div class="cards-3">
-          <article class="card project">
+        <!-- Filters -->
+        <div class="filters reveal" role="tablist" aria-label="Project filters">
+          <button class="filter active" data-filter="all" type="button"><i class="fa-solid fa-border-all"></i> All</button>
+          <button class="filter" data-filter="inventory" type="button"><i class="fa-solid fa-boxes-stacked"></i> Inventory</button>
+          <button class="filter" data-filter="workflow" type="button"><i class="fa-solid fa-route"></i> Workflow</button>
+          <button class="filter" data-filter="delivery" type="button"><i class="fa-solid fa-truck-fast"></i> Delivery</button>
+          <button class="filter" data-filter="vehicles" type="button"><i class="fa-solid fa-car"></i> Vehicles</button>
+          <button class="filter" data-filter="erp" type="button"><i class="fa-solid fa-building"></i> ERP</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="cards-3" id="projectGrid">
+
+          <!-- Assets Management -->
+          <article class="card project reveal tilt" data-type="inventory"
+            data-title="Assets Management App"
+            data-badge="Inventory"
+            data-desc="Register assets, assign them to locations, manage transfers, and perform stock counting with full traceability and reporting."
+            data-tags="Locations,Transfers,Stock Count,Reports"
+            data-tech=".NET,SQL,APIs">
             <div class="project-top">
               <h3 class="card-title"><i class="fa-solid fa-boxes-stacked"></i> Assets Management App</h3>
               <span class="badge">Inventory</span>
             </div>
-            <p class="muted">
-              Register assets, assign them to locations, manage transfers, and perform stock counting
-              to validate quantities with traceability and reporting.
-            </p>
-            <div class="tags">
-              <span>Locations</span><span>Transfers</span><span>Stock Count</span><span>Reports</span>
-            </div>
+            <p class="muted">Register assets, assign locations, transfers, stock counting, reporting.</p>
+            <div class="tags"><span>Locations</span><span>Count</span><span>Reports</span></div>
+            <div class="project-cta"><span class="linkish">View details <i class="fa-solid fa-arrow-right"></i></span></div>
           </article>
 
-          <article class="card project">
+          <!-- PO Approvals Workflow (NEW) -->
+          <article class="card project reveal tilt" data-type="workflow"
+            data-title="PO Approvals Workflow"
+            data-badge="Workflow"
+            data-desc="Workflow-based system integrated with Infor M3 to handle multi-level purchase order approvals, status tracking, notifications, and audit logs."
+            data-tags="Multi-level Approvals,Notifications,Audit Logs,Status Tracking"
+            data-tech="ASP.NET,PHP APIs,Infor M3,SQL">
+            <div class="project-top">
+              <h3 class="card-title"><i class="fa-solid fa-file-signature"></i> PO Approvals Workflow</h3>
+              <span class="badge">Workflow</span>
+            </div>
+            <p class="muted">Multi-level approvals, notifications, audit logs, Infor M3 status sync.</p>
+            <div class="tags"><span>Approvals</span><span>Audit</span><span>ERP Sync</span></div>
+            <div class="project-cta"><span class="linkish">View details <i class="fa-solid fa-arrow-right"></i></span></div>
+          </article>
+
+          <!-- BakeryApp (NEW) -->
+          <article class="card project reveal tilt" data-type="delivery"
+            data-title="BakeryApp"
+            data-badge="Delivery"
+            data-desc="Track bakery orders status end-to-end (new → preparing → ready → delivered). Users can print a Picking List for warehouse/production to prepare items accurately."
+            data-tags="Order Status,Delivered,Picking List Print,Operations"
+            data-tech=".NET Core,SQL,Printing,Workflow">
+            <div class="project-top">
+              <h3 class="card-title"><i class="fa-solid fa-bread-slice"></i> BakeryApp</h3>
+              <span class="badge">Delivery</span>
+            </div>
+            <p class="muted">Orders status tracking + delivered confirmation + print picking list.</p>
+            <div class="tags"><span>Status</span><span>Delivered</span><span>Picking List</span></div>
+            <div class="project-cta"><span class="linkish">View details <i class="fa-solid fa-arrow-right"></i></span></div>
+          </article>
+
+          <!-- Work Orders -->
+          <article class="card project reveal tilt" data-type="workflow"
+            data-title="Work Orders App"
+            data-badge="Maintenance"
+            data-desc="Create and manage equipment work orders and preventive maintenance plans to support building operations."
+            data-tags="Equipment,Plans,Tracking"
+            data-tech="Web,APIs,Workflow">
             <div class="project-top">
               <h3 class="card-title"><i class="fa-solid fa-screwdriver-wrench"></i> Work Orders App</h3>
               <span class="badge">Maintenance</span>
             </div>
-            <p class="muted">
-              Create and manage equipment work orders and preventive maintenance plans to support building operations.
-            </p>
-            <div class="tags">
-              <span>Equipment</span><span>Plans</span><span>Tracking</span>
-            </div>
+            <p class="muted">Work orders, maintenance plans, equipment tracking, ops support.</p>
+            <div class="tags"><span>Equipment</span><span>Plans</span><span>Tracking</span></div>
+            <div class="project-cta"><span class="linkish">View details <i class="fa-solid fa-arrow-right"></i></span></div>
           </article>
 
-          <article class="card project">
+          <!-- Operation & Orders -->
+          <article class="card project reveal tilt" data-type="delivery"
+            data-title="Operation & Orders App"
+            data-badge="Delivery"
+            data-desc="Ensure orders are delivered to customers with status flow, tracking, and operational visibility."
+            data-tags="Status,Workflow,Operations"
+            data-tech="Web,SQL,Dashboards">
             <div class="project-top">
               <h3 class="card-title"><i class="fa-solid fa-truck-fast"></i> Operation & Orders App</h3>
               <span class="badge">Delivery</span>
             </div>
-            <p class="muted">
-              Ensure orders are delivered to customers with status flow, tracking, and operational visibility.
-            </p>
-            <div class="tags">
-              <span>Status</span><span>Workflow</span><span>Operations</span>
-            </div>
+            <p class="muted">Order status flow, delivery confirmation, operational visibility.</p>
+            <div class="tags"><span>Status</span><span>Workflow</span><span>Ops</span></div>
+            <div class="project-cta"><span class="linkish">View details <i class="fa-solid fa-arrow-right"></i></span></div>
           </article>
 
-          <article class="card project">
-            <div class="project-top">
-              <h3 class="card-title"><i class="fa-solid fa-calendar-days"></i> Reservation App</h3>
-              <span class="badge">Rooms</span>
-            </div>
-            <p class="muted">
-              Meeting room reservation system with availability checks, scheduling, and simple booking for teams.
-            </p>
-            <div class="tags">
-              <span>Booking</span><span>Availability</span><span>Calendar</span>
-            </div>
-          </article>
-
-          <article class="card project">
+          <!-- Tracking -->
+          <article class="card project reveal tilt" data-type="vehicles"
+            data-title="Tracking App"
+            data-badge="Vehicles"
+            data-desc="Track vehicle violations, create new violations, generate reports, and support communication between departments."
+            data-tags="Violations,Reports,Collaboration"
+            data-tech="Web,APIs,Reporting">
             <div class="project-top">
               <h3 class="card-title"><i class="fa-solid fa-car-burst"></i> Tracking App</h3>
               <span class="badge">Vehicles</span>
             </div>
-            <p class="muted">
-              Track vehicle violations, create new violations, generate reports, and support communication between departments.
-            </p>
-            <div class="tags">
-              <span>Violations</span><span>Reports</span><span>Collaboration</span>
-            </div>
+            <p class="muted">Violations tracking, reporting, workflows, department collaboration.</p>
+            <div class="tags"><span>Violations</span><span>Reports</span><span>Workflow</span></div>
+            <div class="project-cta"><span class="linkish">View details <i class="fa-solid fa-arrow-right"></i></span></div>
           </article>
 
-          <article class="card project">
+          <!-- Factory Track / ERP -->
+          <article class="card project reveal tilt" data-type="erp"
+            data-title="Factory Track App"
+            data-badge="Infor M3"
+            data-desc="Web app integrated with Infor M3 to streamline orders with real-time visibility and workflow automation."
+            data-tags="ERP,Automation,Workflows"
+            data-tech=".NET/PHP,APIs,Infor M3">
             <div class="project-top">
               <h3 class="card-title"><i class="fa-solid fa-industry"></i> Factory Track App</h3>
               <span class="badge">Infor M3</span>
             </div>
-            <p class="muted">
-              Web application integrated with Infor M3 to manage and streamline orders with real-time visibility.
-            </p>
-            <div class="tags">
-              <span>ERP</span><span>Automation</span><span>Workflows</span>
-            </div>
+            <p class="muted">Infor M3 integration, order automation, visibility, workflows.</p>
+            <div class="tags"><span>ERP</span><span>Automation</span><span>APIs</span></div>
+            <div class="project-cta"><span class="linkish">View details <i class="fa-solid fa-arrow-right"></i></span></div>
           </article>
+
         </div>
       </div>
     </section>
@@ -295,13 +355,13 @@
     <!-- Experience -->
     <section id="experience" class="section alt">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
-          <p class="muted">Work history.</p>
+          <p class="muted">Work history timeline.</p>
         </div>
 
         <div class="timeline">
-          <div class="t-item">
+          <div class="t-item reveal">
             <div class="t-dot"></div>
             <div class="card t-card">
               <div class="t-row">
@@ -310,16 +370,15 @@
               </div>
               <ul class="list">
                 <li>Develop and maintain scalable enterprise applications (Java & Spring).</li>
-                <li>Integrate APIs to enhance functionality and interoperability across systems.</li>
-                <li>Integrate with Infor M3 ERP to support workflows and operations.</li>
-                <li>Implement automated testing to improve code quality and reduce manual testing.</li>
-                <li>Collaborate with cross-functional teams in Agile environments.</li>
+                <li>Integrate APIs to enhance interoperability across systems.</li>
+                <li>Integrate with Infor M3 ERP to support operations workflows.</li>
+                <li>Implement automated testing to improve quality.</li>
                 <li>Mentor junior developers and enforce best practices.</li>
               </ul>
             </div>
           </div>
 
-          <div class="t-item">
+          <div class="t-item reveal">
             <div class="t-dot"></div>
             <div class="card t-card">
               <div class="t-row">
@@ -327,10 +386,9 @@
                 <span class="muted">LSS — Amman | 01/2021 - 06/2024</span>
               </div>
               <ul class="list">
-                <li>Developed and maintained web applications using Web Forms and APIs.</li>
-                <li>Collaborated with cross-functional teams to deliver solutions on time.</li>
-                <li>Applied Agile methodologies to streamline development processes.</li>
-                <li>Conducted code reviews and supported junior developers.</li>
+                <li>Built web applications using Web Forms and APIs.</li>
+                <li>Delivered solutions on time with Agile teams.</li>
+                <li>Code reviews and mentoring for junior developers.</li>
               </ul>
             </div>
           </div>
@@ -341,111 +399,241 @@
     <!-- Education -->
     <section id="education" class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
           <p class="muted">Academic background.</p>
         </div>
 
-        <div class="card">
+        <div class="card reveal tilt">
           <h3 class="card-title">Bachelor's Degree in Software Engineering</h3>
           <p class="muted">Al-Zaytoonah University of Jordan — 09/2019</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2><i class="fa-regular fa-paper-plane"></i> Contact</h2>
-          <p class="muted">Let’s connect.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3 class="card-title">Contact Info</h3>
-            <p class="muted">
-              <i class="fa-regular fa-envelope"></i>
-              <a href="mailto:hatemKhaled1997@icloud.com">hatemKhaled1997@icloud.com</a><br />
-
-              <i class="fa-solid fa-phone"></i>
-              <span>+962788756996</span><br />
-
-              <i class="fa-brands fa-linkedin"></i>
-              <a href="https://www.linkedin.com/in/hatem-khaled" target="_blank" rel="noreferrer">
-                linkedin.com/in/hatem-khaled
-              </a><br />
-
-              <i class="fa-brands fa-github"></i>
-              <a href="#" title="Add your GitHub link">Add your GitHub link</a>
-            </p>
-
-            <div class="cv-box">
-              <i class="fa-solid fa-file-arrow-down"></i>
-              <div>
-                <div class="cv-title">CV PDF</div>
-                <a class="cv-link" href="Hatem%20CV%202025.pdf" download="Hatem_BaniYaseen_CV_2025.pdf">
-                  Download CV
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- <form class="card form" onsubmit="return false;">
-            <label>
-              Name
-              <input type="text" placeholder="Your name" />
-            </label>
-            <label>
-              Email
-              <input type="email" placeholder="you@email.com" />
-            </label>
-            <label>
-              Message
-              <textarea rows="5" placeholder="Write your message..."></textarea>
-            </label>
-            <button class="btn" type="submit"><i class="fa-regular fa-paper-plane"></i> Send</button>
-            <p class="muted tiny">UI only — connect it to backend later.</p>
-          </form> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer (Contact moved here) -->
     <footer class="footer">
       <div class="container footer-row">
-        <span class="muted">© <span id="year"></span> Hatem BaniYaseen</span>
+        <div class="footer-left">
+          <div class="foot-name">Hatem BaniYaseen</div>
+          <div class="muted">Senior Software Developer • Amman, Jordan</div>
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:hatemKhaled1997@icloud.com"><i class="fa-regular fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/hatem-khaled" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="Hatem%20CV%202025.pdf" download="Hatem_BaniYaseen_CV_2025.pdf">
+            <i class="fa-solid fa-download"></i> CV
+          </a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="year"></span> All rights reserved</span>
         <a class="muted" href="#top">Back to top ↑</a>
       </div>
     </footer>
   </main>
 
+  <!-- Floating back-to-top -->
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Project Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalClose"></div>
+
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-x" id="modalX" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-badge" id="modalBadge">Project</div>
+      <h3 class="modal-title" id="modalTitle">Title</h3>
+      <p class="modal-desc" id="modalDesc">Description</p>
+
+      <div class="modal-block">
+        <div class="modal-sub">Key areas</div>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+
+      <div class="modal-block">
+        <div class="modal-sub">Tech</div>
+        <div class="modal-tags" id="modalTech"></div>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn" href="#projects"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <a class="btn ghost" href="Hatem%20CV%202025.pdf" download="Hatem_BaniYaseen_CV_2025.pdf">
+          <i class="fa-solid fa-download"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Footer year
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme toggle (Dark/Light) + save preference
+    // Theme toggle
     const root = document.documentElement;
-    const btn  = document.getElementById("themeToggle");
-    const iconEl = btn.querySelector(".icon");
-    const textEl = btn.querySelector(".icon-text");
+    const themeBtn  = document.getElementById("themeToggle");
+    const themeIcon = themeBtn.querySelector(".icon");
+    const themeText = themeBtn.querySelector(".icon-text");
 
     function setTheme(theme) {
       root.setAttribute("data-theme", theme);
       const isDark = theme === "dark";
-
-      iconEl.className = isDark ? "fa-solid fa-moon icon" : "fa-solid fa-sun icon";
-      textEl.textContent = isDark ? "Night" : "Light";
-
+      themeIcon.className = isDark ? "fa-solid fa-moon icon" : "fa-solid fa-sun icon";
+      themeText.textContent = isDark ? "Night" : "Light";
       localStorage.setItem("theme", theme);
     }
 
     const saved = localStorage.getItem("theme");
     if (saved === "light" || saved === "dark") setTheme(saved);
 
-    btn.addEventListener("click", () => {
+    themeBtn.addEventListener("click", () => {
       const current = root.getAttribute("data-theme") || "dark";
       setTheme(current === "dark" ? "light" : "dark");
+    });
+
+    // Scroll progress
+    const progressBar = document.getElementById("progressBar");
+    function updateProgress() {
+      const h = document.documentElement;
+      const scrollTop = h.scrollTop || document.body.scrollTop;
+      const height = h.scrollHeight - h.clientHeight;
+      const p = height > 0 ? (scrollTop / height) * 100 : 0;
+      progressBar.style.width = p + "%";
+    }
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+
+    // Counters (hero stats)
+    const counterEls = document.querySelectorAll("[data-counter]");
+    let countersRan = false;
+
+    function animateCount(el) {
+      const num = el.querySelector(".count");
+      const to = Number(num.dataset.to || "0");
+      const suffix = num.dataset.suffix || "";
+      const dur = 900;
+      const start = performance.now();
+      function tick(t) {
+        const p = Math.min(1, (t - start) / dur);
+        const val = Math.floor(p * to);
+        num.textContent = val + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !countersRan) {
+          countersRan = true;
+          counterEls.forEach(animateCount);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const hero = document.querySelector(".hero");
+    if (hero) heroObserver.observe(hero);
+
+    // Back to top
+    const toTop = document.getElementById("toTop");
+    function toggleTopBtn() { toTop.classList.toggle("show", window.scrollY > 600); }
+    window.addEventListener("scroll", toggleTopBtn, { passive: true });
+    toggleTopBtn();
+    toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    // Projects filter
+    const filters = document.querySelectorAll(".filter");
+    const cards = document.querySelectorAll(".project");
+
+    filters.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filters.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const type = btn.dataset.filter;
+
+        cards.forEach(c => {
+          const match = type === "all" || c.dataset.type === type;
+          c.style.display = match ? "" : "none";
+        });
+      });
+    });
+
+    // Project modal
+    const modal = document.getElementById("modal");
+    const modalClose = document.getElementById("modalClose");
+    const modalX = document.getElementById("modalX");
+
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc  = document.getElementById("modalDesc");
+    const modalBadge = document.getElementById("modalBadge");
+    const modalTags  = document.getElementById("modalTags");
+    const modalTech  = document.getElementById("modalTech");
+
+    function openModal(card) {
+      modalTitle.textContent = card.dataset.title || "Project";
+      modalDesc.textContent  = card.dataset.desc || "";
+      modalBadge.textContent = card.dataset.badge || "Project";
+
+      modalTags.innerHTML = "";
+      (card.dataset.tags || "").split(",").map(s => s.trim()).filter(Boolean).forEach(t => {
+        const el = document.createElement("span");
+        el.textContent = t;
+        modalTags.appendChild(el);
+      });
+
+      modalTech.innerHTML = "";
+      (card.dataset.tech || "").split(",").map(s => s.trim()).filter(Boolean).forEach(t => {
+        const el = document.createElement("span");
+        el.textContent = t;
+        modalTech.appendChild(el);
+      });
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    cards.forEach(card => card.addEventListener("click", () => openModal(card)));
+    modalClose.addEventListener("click", closeModal);
+    modalX.addEventListener("click", closeModal);
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+    // Tilt hover (interactive)
+    const tilts = document.querySelectorAll(".tilt");
+    tilts.forEach(el => {
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const rx = ((y / r.height) - 0.5) * -6;
+        const ry = ((x / r.width) - 0.5) *  8;
+        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "";
+      });
     });
   </script>
 </body>
